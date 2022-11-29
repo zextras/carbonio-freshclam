@@ -71,14 +71,6 @@ DatabaseOwner zextras
 # You can use db.XY.ipv6.clamav.net for IPv6 connections.
 %%explode DatabaseMirror VAR:zimbraClamAVDatabaseMirror%%
 
-# database.clamav.net is now the primary domain name to be used world-wide.
-# Now that CloudFlare is being used as our Content Delivery Network (CDN),
-# this one domain name works world-wide to direct freshclam to the closest
-# geographic endpoint.
-# If the old db.XY.clamav.net domains are set, freshclam will automatically
-# use database.clamav.net instead.
-DatabaseMirror database.clamav.net
-
 # How many attempts to make before giving up.
 # Default: 3 (per mirror)
 #MaxAttempts 5
