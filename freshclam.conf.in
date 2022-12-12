@@ -96,6 +96,7 @@ DatabaseOwner zextras
 #DatabaseCustomURL ftp://myserver.example.com/example.ldb
 #DatabaseCustomURL ftps://myserver.example.com:4567/example.ndb
 #DatabaseCustomURL file:///mnt/nfs/local.hdb
+%%explode DatabaseCustomURL VAR:carbonioClamAVDatabaseCustomURL%%
 
 # This option allows you to easily point freshclam to private mirrors.
 # If PrivateMirror is set, freshclam does not attempt to use DNS
