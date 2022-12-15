@@ -69,7 +69,15 @@ DatabaseOwner zextras
 # Uncomment the following line and replace XY with your country
 # code. See http://www.iana.org/cctld/cctld-whois.htm for the full list.
 # You can use db.XY.ipv6.clamav.net for IPv6 connections.
-%%explode DatabaseMirror VAR:zimbraClamAVDatabaseMirror%%
+DatabaseMirror %%zimbraClamAVDatabaseMirror%%
+
+# database.clamav.net is now the primary domain name to be used world-wide.
+# Now that CloudFlare is being used as our Content Delivery Network (CDN),
+# this one domain name works world-wide to direct freshclam to the closest
+# geographic endpoint.
+# If the old db.XY.clamav.net domains are set, freshclam will automatically
+# use database.clamav.net instead.
+DatabaseMirror database.clamav.net
 
 # How many attempts to make before giving up.
 # Default: 3 (per mirror)
@@ -96,7 +104,6 @@ DatabaseOwner zextras
 #DatabaseCustomURL ftp://myserver.example.com/example.ldb
 #DatabaseCustomURL ftps://myserver.example.com:4567/example.ndb
 #DatabaseCustomURL file:///mnt/nfs/local.hdb
-%%explode DatabaseCustomURL VAR:carbonioClamAVDatabaseCustomURL%%
 
 # This option allows you to easily point freshclam to private mirrors.
 # If PrivateMirror is set, freshclam does not attempt to use DNS
